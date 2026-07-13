@@ -39,6 +39,8 @@ func (q *QUIC) Listen(addr string) (err error) {
 			MaxIdleTimeout:                 time.Second * 10,
 			InitialStreamReceiveWindow:     1024 * 1024 * 8,
 			InitialConnectionReceiveWindow: 1024 * 1024 * 8,
+			MaxIncomingStreams:             200,
+			MaxIncomingUniStreams:          200,
 			KeepAlivePeriod:                0,
 			InitialPacketSize:              1350,
 			Tracer:                         qlog.DefaultConnectionTracer,
